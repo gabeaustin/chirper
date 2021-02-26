@@ -3,9 +3,9 @@ import { useState } from "react";
 
 const Home = () => {
     const [chirps, setChirps] = useState([
-        { body: "Lorem ipsum vaccine the new normal virtual happy hour Blursday.", author: "birthday_boy", timestamp: "", id: 1 },
-        { body: "Netflix self care home haircut droplet Lysol spray.", author: "netflixChill", timestamp: "", id: 2 },
-        { body: "Lorem ipsum Queen's Gambit sanitizer Dr. Fauci ballot.", author: "fauci-for-Pres", timestamp: "", id: 3 }
+        { body: "Lorem ipsum vaccine the new normal virtual happy hour Blursday.", author: "birthday_boy", id: 1 },
+        { body: "Netflix self care home haircut droplet Lysol spray.", author: "netflixChill", id: 2 },
+        { body: "Lorem ipsum Queen's Gambit sanitizer Dr. Fauci ballot.", author: "fauci-for-Pres", id: 3 }
     ]);
 
     {/* this is array destructuring (line below) */}
@@ -24,6 +24,15 @@ const Home = () => {
             </div>
             
             <button onClick={handlePostChirpClick}>Post Chirp</button>
+
+            {chirps.map((chirp) => (
+                <div className="chirp-box" key={chirp.id}>
+                    <p className="chirp-text">
+                        <h4>{chirp.body}</h4>
+                        <h6>Chirped by {chirp.author}</h6>
+                    </p>
+                </div>
+            ))}
             
             <p>{ name } is { age } years old.</p>
 
