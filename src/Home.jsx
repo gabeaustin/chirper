@@ -9,12 +9,13 @@ const Home = () => {
     ]);
 
     {/* this is array destructuring (line below) */}
-    const [name, setName] = useState("Gabe"); {/* useState is the hook */}
-    const [age, setAge] = useState(25);
+    // const [name, setName] = useState("Gabe"); {/* useState is the hook */}
+    // const [age, setAge] = useState(25);
 
     const handlePostChirpClick = () => {
-        setName("Luigi");
-        setAge(30);
+        // setName("Luigi");
+        // setAge(30);
+        alert("Add new Chirp once clicked.");
     }
 
     return (
@@ -34,9 +35,7 @@ const Home = () => {
                 </div>
             ))}
             
-            <p>{ name } is { age } years old.</p>
-
-            {/* Put array/list of Chirps HERE */}
+            {/* <p>{ name } is { age } years old.</p> */}
         </div>
     );
 };
