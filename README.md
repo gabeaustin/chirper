@@ -2,6 +2,7 @@
 ***Personal Note**: Turn This On In*
 
 ## **Due Date: Friday, 2/26/21 - 1:00 pm**
+### [Demo from Luke](https://gravity.covalence.io/portal/course/2/484)
 
 In this lab, you will be building your first front-end application using ReactJS.
 
