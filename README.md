@@ -22,3 +22,6 @@ It's called Chirper, a platform where you can post short messages on the interne
 
 ### **Advanced (optional)**
 * Look into the npm packages of ``uuid`` for generating unique keys for each chirp, ``moment`` for nicely formatting timestamps for each chirp, and ``react-icons`` to add some SVG icons to really add that cool style to your Chirper lab.
+
+
+:octocat:  Chirper (Front End)  :octocat:
