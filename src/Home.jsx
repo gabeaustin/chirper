@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import ChirpList from "./ChirpList";
 
 const Home = () => {
     const [chirps, setChirps] = useState([
@@ -26,15 +27,9 @@ const Home = () => {
             
             <button onClick={handlePostChirpClick}>Post Chirp</button>
 
-            {chirps.map((chirp) => (
-                <div className="chirp-box" key={chirp.id}>
-                    <p className="chirp-text">
-                        <h4>{chirp.body}</h4>
-                        <h6>Chirped by {chirp.author}</h6>
-                    </p>
-                </div>
-            ))}
-            
+            {/* This line is a prop (below) */}
+            <ChirpList chirps={chirps} title="Recent Chirps!" />
+
             {/* <p>{ name } is { age } years old.</p> */}
         </div>
     );
