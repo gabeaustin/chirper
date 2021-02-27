@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles.css";
 import { useState } from "react";
 import ChirpList from "./ChirpList";
 
@@ -25,7 +26,12 @@ const Home = () => {
                 <h1>Welcome to Chirper</h1> 
             </div>
             
-            <button onClick={handlePostChirpClick}>Post Chirp</button>
+            <button 
+                type="button" 
+                class="btn btn-outline-info text-nowrap btn-lg" 
+                onClick={handlePostChirpClick}>
+                    Post Chirp
+            </button>
 
             {/* This line is a prop (below) */}
             <ChirpList chirps={chirps} title="Recent Chirps!" />

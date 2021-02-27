@@ -1,0 +1,9 @@
+.btn-outline-info:hover, 
+.btn-outline-info:focus, 
+.btn-outline-info:active, 
+.btn-outline-info.active, 
+.open>.dropdown-toggle.btn-outline-info {
+    color: #fff;
+    background-color: #0dcaf0;
+    border-color: #0dcaf0;
+}
