@@ -1,3 +1,7 @@
+body {
+    font-family: "Roboto", sans-serif;
+}
+
 .btn-outline-info:hover, 
 .btn-outline-info:focus, 
 .btn-outline-info:active, 
@@ -6,4 +10,37 @@
     color: #fff;
     background-color: #0dcaf0;
     border-color: #0dcaf0;
+}
+
+.welcome-message {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.form-container {
+    width: 360px;
+    background-color: white;
+    margin: auto;
+    margin-bottom: 2em;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    padding: 10px;
+}
+
+.form-field {
+    margin: 10px 0 10px 0;
+    padding: 15px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.button-container {
+    margin-bottom: 2em;
+}
+
+.display-chirp-feed {
+    padding: 15px;
+    width: 75%;
+    margin: auto;
+    border: 1px solid green;
 }

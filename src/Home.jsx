@@ -29,14 +29,14 @@ const Home = () => {
 
     return (
         <div className="home">
-            <div className="welcomeMessage">
+            <div className="welcome-message">
                 <h1>Welcome to Chirper</h1> 
             </div>
             
             {/* Need to work on getting a list of all the chirps */}
             {/* <ChirpList chirps={chirps} title="Recent Chirps!" /> */}
 
-            <form>
+            <form className="form-container">
                 <textarea 
                     value={chirps.chirpBody}
                     onChange={handleChirpBodyInput}
@@ -58,13 +58,14 @@ const Home = () => {
                     required
                 />
             </form>
-
-            <button 
-                type="submit" 
-                class="btn btn-outline-info text-nowrap btn-lg form-field" 
-                onClick={handleSubmit}>
-                    Post Chirp
-            </button>
+            <div className="button-container text-center">
+                <button 
+                    type="submit" 
+                    class="submit-button btn btn-outline-info text-nowrap btn-lg" 
+                    onClick={handleSubmit}>
+                        Post Chirp
+                </button>
+            </div>
         </div>
     );
 };
