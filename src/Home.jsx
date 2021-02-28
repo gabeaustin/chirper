@@ -4,11 +4,13 @@ import { useState } from "react";
 import ChirpList from "./ChirpList";
 
 const Home = () => {
-    const [chirps, setChirps] = useState([
-        { body: "Lorem ipsum vaccine the new normal virtual happy hour Blursday.", author: "birthday_boy", id: 1 },
-        { body: "Netflix self care home haircut droplet Lysol spray.", author: "netflixChill", id: 2 },
-        { body: "Lorem ipsum Queen's Gambit sanitizer Dr. Fauci ballot.", author: "fauci-for-Pres", id: 3 }
-    ]);
+    const [chirps, setChirps] = useState({
+        chirpBody: "",
+        chirpAuthor: ""
+        // { body: "Lorem ipsum vaccine the new normal virtual happy hour Blursday.", author: "birthday_boy", id: 1 },
+        // { body: "Netflix self care home haircut droplet Lysol spray.", author: "netflixChill", id: 2 },
+        // { body: "Lorem ipsum Queen's Gambit sanitizer Dr. Fauci ballot.", author: "fauci-for-Pres", id: 3 }
+    });
 
     const handlePostChirpClick = (event) => {
         setChirps({...chirps, body: event.target.value})
@@ -24,14 +26,22 @@ const Home = () => {
 
             <form>
                 <textarea 
-                    id="chirpText" 
-                    placeholder="What do you want to say?">
+                    value={chirps.chirpBody}
+                    id="chirp-body" 
+                    class="form-field"
+                    placeholder="What do you want to say?"
+                    name="chirpBody"
+                    required>
                 </textarea>
 
                 <input 
+                    value={chirps.chirpAuthor}
                     type="text"
-                    id="chirpAuthor"
+                    id="chirp-author"
+                    class="form-field"
                     placeholder="Enter your name"
+                    name="chirpAuthor"
+                    required
                 />
             </form>
 
