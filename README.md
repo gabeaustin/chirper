@@ -1,5 +1,5 @@
 # Chirper (Front End)
-***Personal Note**: Turn This On In*
+***Personal Note**: Turn This One In*
 
 ## **Due Date: Friday, 2/26/21 - 1:00 pm**
 ### [Demo from Luke](https://gravity.covalence.io/portal/course/2/484)
