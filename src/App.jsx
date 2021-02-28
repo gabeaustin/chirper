@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Home from "./Home";
+import Create from "./Create";
 
 function App() {    
     return (
