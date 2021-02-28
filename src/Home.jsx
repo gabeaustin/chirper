@@ -10,13 +10,7 @@ const Home = () => {
         { body: "Lorem ipsum Queen's Gambit sanitizer Dr. Fauci ballot.", author: "fauci-for-Pres", id: 3 }
     ]);
 
-    {/* this is array destructuring (line below) */}
-    // const [name, setName] = useState("Gabe"); {/* useState is the hook */}
-    // const [age, setAge] = useState(25);
-
     const handlePostChirpClick = () => {
-        // setName("Luigi");
-        // setAge(30);
         alert("Add new Chirp once clicked.");
     }
 
@@ -33,10 +27,25 @@ const Home = () => {
                     Post Chirp
             </button>
 
-            {/* This line is a prop (below) */}
+
             <ChirpList chirps={chirps} title="Recent Chirps!" />
 
-            {/* <p>{ name } is { age } years old.</p> */}
+
+            <form>
+                <textarea 
+                    id="chirpText" 
+                    placeholder="What do you want to say?">
+                </textarea>
+
+                <input 
+                    type="text"
+                    id="chirpAuthor"
+                    placeholder="Enter your name"
+                />
+
+            </form>
+
+
         </div>
     );
 };
