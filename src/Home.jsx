@@ -10,8 +10,8 @@ const Home = () => {
         { body: "Lorem ipsum Queen's Gambit sanitizer Dr. Fauci ballot.", author: "fauci-for-Pres", id: 3 }
     ]);
 
-    const handlePostChirpClick = () => {
-        alert("Add new Chirp once clicked.");
+    const handlePostChirpClick = (event) => {
+        setChirps({...chirps, body: event.target.value})
     }
 
     return (
@@ -20,16 +20,7 @@ const Home = () => {
                 <h1>Welcome to Chirper</h1> 
             </div>
             
-            <button 
-                type="button" 
-                class="btn btn-outline-info text-nowrap btn-lg" 
-                onClick={handlePostChirpClick}>
-                    Post Chirp
-            </button>
-
-
             <ChirpList chirps={chirps} title="Recent Chirps!" />
-
 
             <form>
                 <textarea 
@@ -42,10 +33,14 @@ const Home = () => {
                     id="chirpAuthor"
                     placeholder="Enter your name"
                 />
-
             </form>
 
-
+            <button 
+                type="button" 
+                class="btn btn-outline-info text-nowrap btn-lg" 
+                onClick={handlePostChirpClick}>
+                    Post Chirp
+            </button>
         </div>
     );
 };
