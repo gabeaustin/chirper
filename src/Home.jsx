@@ -46,6 +46,7 @@ const Home = () => {
                     name="chirpBody"
                     required>
                 </textarea>
+                <p>Characters Left: </p> {/* max 180 Characters */}
 
                 <input 
                     value={chirps.chirpAuthor}
