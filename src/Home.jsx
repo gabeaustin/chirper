@@ -5,13 +5,13 @@ import ChirpList from "./ChirpList";
 
 const Home = () => {
     const [submitted, setSubmitted] = useState(false);
-    const [chirps, setChirps] = useState({
-        chirpBody: "",
-        chirpAuthor: ""
-        // { body: "Lorem ipsum vaccine the new normal virtual happy hour Blursday.", author: "birthday_boy", id: 1 },
-        // { body: "Netflix self care home haircut droplet Lysol spray.", author: "netflixChill", id: 2 },
-        // { body: "Lorem ipsum Queen's Gambit sanitizer Dr. Fauci ballot.", author: "fauci-for-Pres", id: 3 }
-    });
+    const [chirps, setChirps] = useState(
+        // chirpBody: "",
+        // chirpAuthor: ""
+        { body: "Lorem ipsum vaccine the new normal virtual happy hour Blursday.", author: "birthday_boy", id: 1 },
+        { body: "Netflix self care home haircut droplet Lysol spray.", author: "netflixChill", id: 2 },
+        { body: "Lorem ipsum Queen's Gambit sanitizer Dr. Fauci ballot.", author: "fauci-for-Pres", id: 3 }
+    );
 
     const handleChirpBodyInput = (event) => {
         setChirps({...chirps, chirpBody: event.target.value})
