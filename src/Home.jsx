@@ -3,6 +3,7 @@ import "./styles.css";
 import { useState } from "react";
 import ChirpList from "./ChirpList";
 
+
 const Home = () => {
     const [submitted, setSubmitted] = useState(false);
     const [chirps, setChirps] = useState(
@@ -14,41 +15,44 @@ const Home = () => {
     );
 
     const handleChirpBodyInput = (event) => {
-        setChirps({...chirps, chirpBody: event.target.value})
+        setChirps({ ...chirps, chirpBody: event.target.value })
     }
 
     const handleChirpAuthorInput = (event) => {
-        setChirps({...chirps, chirpAuthor: event.target.value})
+        setChirps({ ...chirps, chirpAuthor: event.target.value })
     }
 
-    const handleSubmit = (event) => {
-        // need help with this
-        setSubmitted(true);
-        alert("You submitted a Chirp");
+    const handleClick = event => {
+        event.preventDefault();
+        console.log("btn clicked and form submitted " + chirpBody);
+        setChirpBody("");
     }
 
     return (
         <div className="home">
             <div className="welcome-message">
-                <h1>Welcome to Chirper</h1> 
+                <h1>Welcome to Chirper</h1>
             </div>
-            
+
             {/* Need to work on getting a list of all the chirps */}
-            {/* <ChirpList chirps={chirps} title="Recent Chirps!" /> */}
+
+
+
+
+
 
             <form className="form-container">
-                <textarea 
+                <textarea
                     value={chirps.chirpBody}
                     onChange={handleChirpBodyInput}
-                    id="chirp-body" 
+                    id="chirp-body"
                     class="form-field"
                     placeholder="What do you want to say?"
                     name="chirpBody"
                     required>
                 </textarea>
-                <p>Characters Left: </p> {/* max 180 Characters */}
 
-                <input 
+                <input
                     value={chirps.chirpAuthor}
                     onChange={handleChirpAuthorInput}
                     type="text"
@@ -58,15 +62,18 @@ const Home = () => {
                     name="chirpAuthor"
                     required
                 />
-            </form>
-            <div className="button-container text-center">
-                <button 
-                    type="submit" 
-                    class="submit-button btn btn-outline-info text-nowrap btn-lg" 
-                    onClick={handleSubmit}>
+
+                <div class="button-container text-center`">
+                    <button
+                        type="submit"
+                        class="btn btn-outline-info text-nowrap btn-lg"
+                        onClick={handleClick}>
                         Post Chirp
-                </button>
-            </div>
+                    </button>
+
+                    <ChirpList2 />
+                </div>
+            </form>
         </div>
     );
 };
