@@ -37,12 +37,10 @@ body {
 .button-container {
     margin-bottom: 1em;
     margin-top: 1em;
-    border: 1px solid salmon;
 }
 
 .display-chirp-feed {
     padding: 15px;
     width: 75%;
     margin: auto;
-    border: 1px solid green;
 }
