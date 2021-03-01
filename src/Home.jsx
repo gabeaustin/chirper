@@ -1,10 +1,16 @@
 import React from "react";
 import "./styles.css";
 import { useState } from "react";
-import ChirpList from "./ChirpList";
+import ChirpList2 from "./ChirpList2";
+
 
 const Home = () => {
-    const [submitted, setSubmitted] = useState(false);
+    // const [submitted, setSubmitted] = useState(false);
+    const [chirpBody, setChirpBody] = useState("");
+    
+
+
+    
     const [chirps, setChirps] = useState({
         chirpBody: "",
         chirpAuthor: ""
@@ -21,10 +27,10 @@ const Home = () => {
         setChirps({...chirps, chirpAuthor: event.target.value})
     }
 
-    const handleSubmit = (event) => {
-        // need help with this
-        setSubmitted(true);
-        alert("You submitted a Chirp");
+    const handleClick = event => {
+        event.preventDefault();
+        console.log("btn clicked and form submitted " + chirpBody);
+        setChirpBody("");
     }
 
     return (
@@ -34,7 +40,11 @@ const Home = () => {
             </div>
             
             {/* Need to work on getting a list of all the chirps */}
-            {/* <ChirpList chirps={chirps} title="Recent Chirps!" /> */}
+            
+            
+
+
+
 
             <form className="form-container">
                 <textarea 
@@ -46,7 +56,6 @@ const Home = () => {
                     name="chirpBody"
                     required>
                 </textarea>
-                <p>Characters Left: </p> {/* max 180 Characters */}
 
                 <input 
                     value={chirps.chirpAuthor}
@@ -58,15 +67,18 @@ const Home = () => {
                     name="chirpAuthor"
                     required
                 />
+
+                <div class="button-container text-center`">
+                    <button 
+                        type="submit" 
+                        class="btn btn-outline-info text-nowrap btn-lg" 
+                        onClick={handleClick}>
+                            Post Chirp
+                    </button>
+
+                    <ChirpList2 />
+                </div>
             </form>
-            <div className="button-container text-center">
-                <button 
-                    type="submit" 
-                    class="submit-button btn btn-outline-info text-nowrap btn-lg" 
-                    onClick={handleSubmit}>
-                        Post Chirp
-                </button>
-            </div>
         </div>
     );
 };

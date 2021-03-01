@@ -1,22 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import Home from "./Home";
 
 
 const App = () => {  
-    
+
     const handleButtonClick = () => {
-        setCounter(counter + 1);
+        setCount(count + 1);
     }
-
-    const handlePasswordChange = event => {
-        setPassword(event.target.value);
-    }
-
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [counter, setCounter] = useState(0);
     
+    const handleEmailChange = event => {
+        setEmail(event.target.value);
+    }
+
+    const handleChirpBodyChange = event => {
+        setChirpBody(event.target.value);
+    }
+
+    
+    const [count, setCount] = useState(0);
+    const [email, setEmail] = useState("");
+    
+    const [chirpBody, setChirpBody] = useState("");
+    
+    useEffect(() => {
+        console.log("effect running!");
+        document.title = `You have clicked ${count} times`;
+    }, [count]);
+    
+    useEffect(() => {
+        console.log(`searching database for ${chirpBody}`)
+    }, [chirpBody]);
+    
+    const handleClick = event => {
+        event.preventDefault();
+        console.log("btn clicked and form submitted " + chirpBody);
+        setChirpBody("");
+    }
+
     return (
         <div className="App">
             <Navbar />
@@ -26,10 +47,12 @@ const App = () => {
 
             {/* have chirps to display here  */}
             <div className="display-chirp-feed">
-                <h1>The current count is {counter}.</h1>
-                <input value={email} onChange={e => setEmail(e.target.value)} />
-                <input value={password} onChange={handlePasswordChange} />
-                <button onClick={handleButtonClick}>Click me to increment!</button>
+                <p>
+                    {/* <h1>You have clicked {count} times.</h1> */}
+                    {/* <button onClick={handleButtonClick}>Update the count state!</button> */}
+                </p>
+                {/* <input value={chirpBody} onChange={handleChirpBodyChange} onClick={handleClick}/> */}
+                
             </div>
         </div>
     );
